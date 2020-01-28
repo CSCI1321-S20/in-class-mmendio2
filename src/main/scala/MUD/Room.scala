@@ -5,18 +5,22 @@ class Room(val name: String, val desc: String, private var items: List[Item], pr
     
 
   def description(): String = {
-    var fullDesc = name + "\n" + desc + "\n" + "exits: "
-    for(i <- 0 until exits.length){
-      if(i != exits.length-1)
-        fullDesc = convertExits(exits(i)) + ", "
-      else
-        fullDesc = convertExits(exits(i)) + "\n"        
+    var fullDesc = s"$name\n$desc\nexits: "
+    for(i <- 0 until exits.length)
+    {
+      if(exits(i)!= -1 && i!=exits.length-1)
+        fullDesc = fullDesc + convertExits(i) + ", "
+      else if(exits(i)!= -1)
+        fullDesc = fullDesc + convertExits(i) +"\n"
     }
+    fullDesc += "Items: "
     for(i <- 0 until items.length){
-      if(i != exits.length-1)
-        fullDesc = items(i).name + ", "
-      else
-        fullDesc = items(i).name + "\n"
+        if(items.length != 0 && i!=items.length-1)
+          fullDesc = fullDesc + items(i).name + ", "
+        else if(items.length != 0)
+          fullDesc = fullDesc + items(i).name + "\n"
+        else 
+          fullDesc = fullDesc + "The room appears to be empty."
     }
     fullDesc
   }
@@ -35,15 +39,17 @@ class Room(val name: String, val desc: String, private var items: List[Item], pr
     if(exit == 5)
       return "down"
     else
-      return "ERROR"
-  }
-      
-  def getExit(dir: Int): Option[Room] = {
-    if(exits.find(exits == dir) {
-      return 
-    }
+      return "Error"
   }
 
+
+ def getExit(dir: Int): Option[Room] = {
+    if(exits(dir) != -1 )
+      return Some(Room.rooms(dir))
+    else 
+      return None
+  }
+  
   def getItem(itemName: String): Option[Item] = {
     items.find(_.name.toLowerCase == itemName.toLowerCase) match {
       case Some(item) =>
@@ -57,9 +63,10 @@ class Room(val name: String, val desc: String, private var items: List[Item], pr
 }
 
 object Room {
+  val rooms = readRooms()
   def readRooms(): Array[Room] = {
-  val xdata = XML.loadFile("world.xml")
-  (xdata \ "room").map(readRoom).toArray
+    val xdata = XML.loadFile("world.xml")
+    (xdata \ "room").map(readRoom).toArray
   }
 
   def itemsFromNode(n: xml.Node): Item = {
@@ -67,9 +74,9 @@ object Room {
   }
   def readRoom(n: xml.Node): Room = {
     val name = (n \ "@name").text
-    val desc = (n \ "@description").text
-    val exits = (n \ "@exitDirection").text.toArray
-    val items = (n \ "@item").toList
+    val desc = (n \ "description").text.trim
+    val exits = (n \ "exits").text.split(",").map(_.toInt).toArray
+    val items = (n \ "item").map(itemsFromNode).toList
     new Room(name, desc, items, exits)
   }
 }

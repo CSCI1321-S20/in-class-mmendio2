@@ -3,11 +3,17 @@ package MUD
 
 object NordicGame {
     def main(args: Array[String]): Unit ={
-        println("Welcome to NordicMud! \n what's your name?")
-        val name = readLine()
-        println(s"Hello, $name")
-        val inventory = List[Item]()
-        val player = new Player(1, inventory)
+        println("Welcome to NordicMud!\nWhat's your name?")
+        val name = readLine
+        println(s"Hello, $name. Type a 'help' for a list of available actions.")
+        var input = "beginning"
+        val items = List[Item]()
+        val player = new Player(0, items)
+        while(input.toLowerCase!="exit"){
+            println("What would you like to do?")
+            input = readLine 
+            player.processCommand(input)
+        }
         
     }
 }
