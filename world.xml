@@ -1,0 +1,81 @@
+<world>
+	<worldName>PlaceHolder</worldName>
+	<room name = "Cabin Home" roomNumber = "1" description = "This is your home.It's well built to protect you from the outside cold. There is a door that leads to the woods  north and a basement if you choose to go down.">  
+		<item itemName = "Diary" itemDescription = "A journal where you keep your notes.">
+		<item itemName = "Sword" itemDescription = "A weapon. It isn't the nicest but it's better than nothing.">
+		<exit exitDirection = "5" exitNumber = "10"/>
+		<exit exitDirection = "0" exitNumber = "2"/>
+		</room>
+	<room name = "Farhaven Woods" number = "2" description = "Best not stay here too long. There are rumors that trolls wander this land at night looking for lost travelers. To your west lies Asger's Plains, a flat farming land close to the city of Enga. Wayward Path, the quickest route to the holy mountain Kebnekaise.">
+		<item itemName = "Blunt Axe" itemDescription = "The trusty axe you use to chop down firewood. It's seen better days.">
+		<exit exitDirection = "3" exitNumber = "3"/>
+		<exit exitDirection = "2" exitNumber = "6"/>
+	</room>
+	<room name = "Asger's Plains" number = "3" Description = "A peaceful farming area. The locals whisper about sightings of Draugr, undead warriors known for their strength and their disgusting smell. To the north lies the city of Enga and to your east, the Farhaven Woods.">
+		<item itemName = "Corn" itemDescription = "A cob of corn. The locals look like they have enough, so it should be fine to hold onto.">
+		<exit exitDirection = "0" exitNumber = "4"/>
+		<exit exitDirection = "2" exitNumber = "2"/>
+	</room>
+	<room name = "Enga" number = "4" description = "The prosperous city of Enga. The habitants are wary of newcomers and give you strange looks as you pass by. Be careful not to arouse to much notice towards you. You can reach the city limits if you head west or go to Asger's Plains to the south.">
+		<exit exitDirection = "1" exitNumber = "3"/>
+		<exit exitDirection = "3" exitNumber = "5"/>
+	</room>
+	<room name = "Enga's City Limits" = "5" description = "The outskirts of Enga. The further you get out the less well kept the city becomes. There appears to be a wall a rock wall you could climb that children use. If you go up, it would take you closer to the mountains. You could also go east to the inner part of the city.">
+		<item itemName = "Lost Doll" itemDescription = "A child's lost doll. You could return it if you find the child.">
+		<exit exitDirection = "4" exitNumber = "12"/>
+		<exit exitDirection = "2" exitNumber = "4"/>
+	</room>
+	<room name = "Wayward Path" = "6" description = "This is the most common path to the mountains, especially towards the mountain Kebnekaise. Many people make religious pilgrimages using this path. Continuing north would take you to the base of the mountain. Heading west would take you to the Farhaven Woods and heading south would lead you to the Crystal Lake.">
+		<exit exitDirection = "0" exitNumber = "7"/>
+		<exit exitDirection = "3" exitNumber = "2"/>
+		<exit exitDirection = "1" exitNumber = "8"/>
+	</room>
+	<room name = "Base of Kebnekaise" = "7" description = "The rocky base of Kebekaise. You notice people resting before making the climb. The path is well worn from years of travel. Heading up would take you to the summit of the mountain, so be prepared for the trek. Heading south would take you to the Wayward Path.">
+		<item itemName = "Traveler's Coin" itemDescription = "The trademark of the Travelers, a secretive group dedicated to preserving the history and secrets of the world. One of its members must have dropped it.">
+		<exit exitDirection = "4" exitNumber = "15"/>
+		<exit exitDirection = "1" exitNumber = "6"/>
+	</room>
+	<room name = "Crystal Lake" = "8" description = "Described as one of the wonders of the world. It's completely transparent waters attract many tourists from around the lands. They often stop here though, as heading south would take you to Swamps of Ymir, where witches supposedly live.  Heading North would take you to the Wayward Path.">
+		<item itemName = "Tourist's Pan" itemDescription = "An abandoned cooking pan. The one back home is looking a little rusty, so perhaps you could use this.">
+		<exit exitDirection = "1" exitNumber = "9"/>
+		<exit exitDirection = "0" exitNumber = "6"/>
+	</room>
+	<room name = "Swamps of Ymir" = "9" description = "Supposedly witches kidnap childre and feast on them in this swamp, if you believe the rumors that parents tell their mischievous children. Oddly, a thick fog is preventing you from heading further. Perhaps there is merit to the rumors. Heading North would take you to the Crystal Lake.">
+		<item itemName = "Patch of Clothes" itemDescription = "A patch of clothes that appear to have come from a young girl's dress. You hope she is ok.">
+		<exit exitDirection = "0" exitNumber = "8"/>
+	</room>
+	<room name = "Cabin Basement" = "10" description = "The basement to your house. You are still proud by the worksmanship that you put into this place. If only someone else could appreciate it and validate you. Sadly you live completely alone. Heading up would take you back to your main house. There is a secret storage Room you hide your valuables in to the west.">
+		<item itemName = "Broom" itemDescription = "Hey, it may be a little bland, but everything has its purpose. And this one's is to keep your pride cleaned.">
+		<exit exitDirection = "4" exitNumber = "1"/>
+		<exit exitDirection = "3" exitNumber = "11"/>
+	</room>
+	<room name = "Cabin Secret Area" = "11" description = "This is where you hide most of your valuables, which isn't much to be sure. However, you are quite proud of all the work you put into this house, which is valuable in itself. Heading east would take you to your basement.">
+		<item itemName = "Sack of Gold" itemDescription = "There isn't much, just a few gold coins, but it could come in handy.">
+		<item itemName = "Cloak" itemDescription = "A somewhat nice clock that can keep you a bit warmer outside.">
+		<item itemName = "Cap" itemDescription = "You don't want your ears to get too cold out there.">
+		<exit exitDirection = "2" exitNumber = "10"/>
+	</room>
+	<room name = "Child's Area" = "12" description = "An area where children play. You see some toys and a swing attached to a tree. Over to the east, you notice a path that slowly escalates. This looks a different path to the mountains and you can hear the rush of Gulfoss Waterfall. Going down would put you at the outskirts of the Enga.">
+		<exit exitDirection = "2" exitNumber = "13"/>
+		<exit exitDirection = "5" exitNumber = "5"/>
+	</room>
+	<room name = "Gulfoss Waterfall" = "13" description = "The rushing water fills your ears. It's very peaceful here and you see plenty of fruit trees. Heading east would take you up a steeper incline called Giant's Hill that heads towards Mount Kebnekaise. To the east lies the Child's Area, where children play.">
+		<item itemName = "Apple" itemDescription = "Looks tasty! Eat this if you are getting a little hungry, or maybe make it into a pie, yum!">
+		<exit exitDirection = "2" exitNumber = "14"/>
+		<exit exitDirection = "3" exitNumber = "12"/>
+	</room>
+	<room name = "Giant's Hill" = "14" description = "Apparently, a giant died here in a battle millenia ago. Giant bones still partially stick up from the ground. This place is supposed to bring bad luck, so not very many people visit. Other than that, it is pretty nice. The summit of Kebnekaise lays to the east. Heading west would put you near the Gulfoss Waterfall.">
+		<item itemName = "Bone Fragment" itemDescription = "Just a tiny sliver of one of the giant's bones. Keeping it is supposed to bring a curse, but you aren't exactly the superstitious type.">
+		<exit exitDirection = "2" exitNumber = "15"/>
+		<exit exitDirection = "3" exitNumber = "13"/>
+	</room>
+	<room name = "Summit of Mount Kebnekaise" = "15" description = "This is regarded as a holy place among many individuals, and many make religious voyages here every year to pay homage to the gods. Heading north would take inside the Temple of Kebnekaise. To the west lies Giant's Hill and going down leads to the Base of Kebnekaise.">
+		<exit exitDirection = "0" exitNumber = "16"/>
+		<exit exitDirection = "3" exitNumber = "14"/>
+		<exit exitDirection = "5" exitNumber = "7"/>		
+	</room>
+	<room name = "Temple of Kebnekaise" = "16" description = "It's quiet and monks shuffle around looking oddly worried. You see other people setting down offerings. Heading south would lead you back to the summit.">
+		<item itemName = "Book of Prophecy" itemDescription = "It seems like a monk misplaced it. There seems to be a note written in the margins. 'Ragnorak is Coming, the End is Here.' - it sound ominous. Perhaps this is what is worrying the monks.">
+		<exit exitDirection = "1" exitNumber = "15"/>		
+	</room>
+</world>
