@@ -10,7 +10,7 @@ object NordicGame {
         val items = List[Item]()
         val player = new Player(0, items)
         while(input.toLowerCase!="exit"){
-            println("What would you like to do?")
+            println("\nWhat would you like to do?")
             input = readLine 
             player.processCommand(input)
         }

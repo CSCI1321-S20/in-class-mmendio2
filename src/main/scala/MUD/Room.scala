@@ -8,22 +8,25 @@ class Room(val name: String, val desc: String, private var items: List[Item], pr
     var fullDesc = s"$name\n$desc\nexits: "
     for(i <- 0 until exits.length)
     {
-      if(exits(i)!= -1 && i!=exits.length-1)
+      if(exits(i)!= -1)
         fullDesc = fullDesc + convertExits(i) + ", "
-      else if(exits(i)!= -1)
-        fullDesc = fullDesc + convertExits(i) +"\n"
     }
-    fullDesc += "Items: "
-    for(i <- 0 until items.length){
-        if(items.length != 0 && i!=items.length-1)
+    fullDesc= fullDesc.substring(0, fullDesc.length-2)
+    fullDesc += "\nItems: "
+    if(items.length != 0){
+      for(i <- 0 until items.length){
+        if(i!=items.length-1)
           fullDesc = fullDesc + items(i).name + ", "
-        else if(items.length != 0)
+        else
           fullDesc = fullDesc + items(i).name + "\n"
-        else 
-          fullDesc = fullDesc + "The room appears to be empty."
+      }
     }
+    else 
+      fullDesc = fullDesc + "The room appears to be empty."
     fullDesc
   }
+
+  def returnExits(index: Int): Int = exits(index)
 
   def convertExits(exit: Int): String = {
     if(exit == 0)
